@@ -3,7 +3,7 @@ import { MenuScene, PauseScene, EndScene, SettingsScene, ControlsScene } from '.
 // x 304.3372 
 // y 189.2928
 
-// github uploaden
+// lettertype veranderd 1ste keer in het menu bij hover, daarna niet meer
 
 // bugs speler als hij geraakt wordt?
 // gaat de spelers queue leeg als hij wordt geraakt?
