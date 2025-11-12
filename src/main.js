@@ -1,4 +1,3 @@
-import Phaser from 'phaser';
 import { MenuScene, PauseScene, EndScene, SettingsScene, ControlsScene } from './MenuScene.js';
 
 // x 304.3372 
