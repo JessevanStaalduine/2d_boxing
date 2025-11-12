@@ -3,16 +3,23 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main # Deploy telkens wanneer je naar 'main' pusht
+
+permissions:
+  contents: write # Geeft de Action toestemming om naar gh-pages te pushen
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Deploy to GitHub Pages
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./ # let op: root van je repo
+          publish_branch: gh-pages # De branch waar de site op komt
+          publish_dir: ./ # Zet hier de map die je wil publiceren (root)
+          force_orphan: true # Maakt gh-pages branch schoon bij elke deploy
