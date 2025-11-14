@@ -131,31 +131,31 @@ this.load.spritesheet('bgBoxerBag_part5', `${basePath}/sprites/bg_boxer_bag_part
 });
 
 
-this.load.spritesheet('idle', `${basePath}/sprites/Player_idle.png`, {
+this.load.spritesheet('idle', `${basePath}/sprites/player_idle.png`, {
   frameWidth: 640,
   frameHeight: 360,
   margin: 0,
   spacing: 0
 });
 
-this.load.spritesheet('oppo_idle', `${basePath}/sprites/Oppo_idle.png`, {
+this.load.spritesheet('oppo_idle', `${basePath}/sprites/oppo_idle.png`, {
   frameWidth: 640,
   frameHeight: 360,
   margin: 0,
   spacing: 0
 });
 
-this.load.spritesheet('front_step', `${basePath}/sprites/Player_front_step.png`, {
+this.load.spritesheet('front_step', `${basePath}/sprites/player_front_step.png`, {
   frameWidth: 640,
   frameHeight: 360
 });
 
-this.load.spritesheet('oppo_front_step', `${basePath}/sprites/Oppo_front_step.png`, {
+this.load.spritesheet('oppo_front_step', `${basePath}/sprites/oppo_front_step.png`, {
   frameWidth: 640,
   frameHeight: 360
 });
 
-this.load.spritesheet('back_step', `${basePath}/sprites/Player_back_step.png`, {
+this.load.spritesheet('back_step', `${basePath}/sprites/player_back_step.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
@@ -165,12 +165,12 @@ this.load.spritesheet('oppo_back_step', `${basePath}/sprites/oppo_back_step.png`
     frameHeight: 360  
 });
 
-this.load.spritesheet('player_enter_block', `${basePath}/sprites/Player_enter_block.png`, {
+this.load.spritesheet('player_enter_block', `${basePath}/sprites/player_enter_block.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
 
-this.load.spritesheet('player_enter_block_low', `${basePath}/sprites/Player_enter_block_low.png`, {
+this.load.spritesheet('player_enter_block_low', `${basePath}/sprites/player_enter_block_low.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
@@ -180,12 +180,12 @@ this.load.spritesheet('oppo_enter_block', `${basePath}/sprites/oppo_enter_block.
     frameHeight: 360  
 });
 
-this.load.spritesheet('player_block', `${basePath}/sprites/Player_block.png`, {
+this.load.spritesheet('player_block', `${basePath}/sprites/player_block.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
 
-this.load.spritesheet('player_block_low', `${basePath}/sprites/Player_block_low.png`, {
+this.load.spritesheet('player_block_low', `${basePath}/sprites/player_block_low.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
@@ -195,12 +195,12 @@ this.load.spritesheet('oppo_block', `${basePath}/sprites/oppo_block.png`, {
     frameHeight: 360  
 });
 
-this.load.spritesheet('jab_anim', `${basePath}/sprites/Player_jab.png`, { 
+this.load.spritesheet('jab_anim', `${basePath}/sprites/player_jab.png`, { 
     frameWidth: 640, 
     frameHeight: 360 
 });
 
-this.load.spritesheet('jab_body_anim', `${basePath}/sprites/Player_jab_body.png`, { 
+this.load.spritesheet('jab_body_anim', `${basePath}/sprites/player_jab_body.png`, { 
     frameWidth: 640, 
     frameHeight: 360 
 });
@@ -210,12 +210,12 @@ this.load.spritesheet('oppo_jab_anim', `${basePath}/sprites/oppo_jab.png`, {
     frameHeight: 360 
 });
 
-this.load.spritesheet('cross_anim', `${basePath}/sprites/Player_cross.png`, { 
+this.load.spritesheet('cross_anim', `${basePath}/sprites/player_cross.png`, { 
     frameWidth: 640, 
     frameHeight: 360 
 });
 
-this.load.spritesheet('cross_body_anim', `${basePath}/sprites/Player_cross_body.png`, { 
+this.load.spritesheet('cross_body_anim', `${basePath}/sprites/player_cross_body.png`, { 
     frameWidth: 640, 
     frameHeight: 360 
 });
