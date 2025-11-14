@@ -11,6 +11,10 @@ import { MenuScene, PauseScene, EndScene, SettingsScene, ControlsScene } from '.
 // oppo blockt te weinig, en blijft niet stil staan als hij blockt, dat moet wel.
 // verschil tussen speler en tegenstander met stoten en lopen tegelijk, moet verbeterd.
 
+const basePath = window.location.hostname === "localhost"
+  ? ""
+  : "/2d_boxing";
+
 const config = {
     type: Phaser.AUTO,
     width: 800,
@@ -89,178 +93,178 @@ const DEPTH = {
 
 function preload() {
 
-this.load.image('playerSilhouette', 'sprites/sil_sprite.png');
-this.load.image('opponentSilhouette', 'sprites/sil_sprite.png');
-this.load.image('bgScenery', 'images/background.jpg');
-this.load.image('floor', 'images/concrete.jpg');
-this.load.image('roof', 'images/roof.jpg');
-this.load.image('fence', 'images/fence.png')
-this.load.image('logo_floor', 'images/floor_logo.png')
-this.load.image('wallTexture', 'images/wall_texture.png')
-this.load.image('wallPoster', 'images/boxing_image.png');
-this.load.image('wallPoster2', 'images/boxing_club2.png');
+this.load.image('playerSilhouette', `${basePath}/sprites/sil_sprite.png`);
+this.load.image('opponentSilhouette', `${basePath}/sprites/sil_sprite.png`);
+this.load.image('bgScenery', `${basePath}/images/background.jpg`);
+this.load.image('floor', `${basePath}/images/concrete.jpg`);
+this.load.image('roof', `${basePath}/images/roof.jpg`);
+this.load.image('fence', `${basePath}/images/fence.png`)
+this.load.image('logo_floor', `${basePath}/images/floor_logo.png`)
+this.load.image('wallTexture', `${basePath}/images/wall_texture.png`)
+this.load.image('wallPoster', `${basePath}/images/boxing_image.png`);
+this.load.image('wallPoster2', `${basePath}/images/boxing_club2.png`);
 
 
-this.load.spritesheet('bgBoxerBag_part1', 'sprites/bg_boxer_bag_part1.png', {
+this.load.spritesheet('bgBoxerBag_part1', `${basePath}/sprites/bg_boxer_bag_part1.png`, {
   frameWidth: 640,
   frameHeight: 360
 });
 
-this.load.spritesheet('bgBoxerBag_part2', 'sprites/bg_boxer_bag_part2.png', {
+this.load.spritesheet('bgBoxerBag_part2', `${basePath}/sprites/bg_boxer_bag_part2.png`, {
   frameWidth: 640,
   frameHeight: 360
 });
 
-this.load.spritesheet('bgBoxerBag_part3', 'sprites/bg_boxer_bag_part3.png', {
+this.load.spritesheet('bgBoxerBag_part3', `${basePath}/sprites/bg_boxer_bag_part3.png`, {
   frameWidth: 640,
   frameHeight: 360
 });
 
-this.load.spritesheet('bgBoxerBag_part4', 'sprites/bg_boxer_bag_part4.png', {
+this.load.spritesheet('bgBoxerBag_part4', `${basePath}/sprites/bg_boxer_bag_part4.png`, {
   frameWidth: 640,
   frameHeight: 360
 });
 
-this.load.spritesheet('bgBoxerBag_part5', 'sprites/bg_boxer_bag_part5.png', {
+this.load.spritesheet('bgBoxerBag_part5', `${basePath}/sprites/bg_boxer_bag_part5.png`, {
   frameWidth: 640,
   frameHeight: 360
 });
 
 
-this.load.spritesheet('idle', 'sprites/Player_idle.png', {
+this.load.spritesheet('idle', `${basePath}/sprites/Player_idle.png`, {
   frameWidth: 640,
   frameHeight: 360,
   margin: 0,
   spacing: 0
 });
 
-this.load.spritesheet('oppo_idle', 'sprites/Oppo_idle.png', {
+this.load.spritesheet('oppo_idle', `${basePath}/sprites/Oppo_idle.png`, {
   frameWidth: 640,
   frameHeight: 360,
   margin: 0,
   spacing: 0
 });
 
-this.load.spritesheet('front_step', 'sprites/Player_front_step.png', {
+this.load.spritesheet('front_step', `${basePath}/sprites/Player_front_step.png`, {
   frameWidth: 640,
   frameHeight: 360
 });
 
-this.load.spritesheet('oppo_front_step', 'sprites/Oppo_front_step.png', {
+this.load.spritesheet('oppo_front_step', `${basePath}/sprites/Oppo_front_step.png`, {
   frameWidth: 640,
   frameHeight: 360
 });
 
-this.load.spritesheet('back_step', 'sprites/Player_back_step.png', {
+this.load.spritesheet('back_step', `${basePath}/sprites/Player_back_step.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
 
-this.load.spritesheet('oppo_back_step', 'sprites/oppo_back_step.png', {
+this.load.spritesheet('oppo_back_step', `${basePath}/sprites/oppo_back_step.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
 
-this.load.spritesheet('player_enter_block', 'sprites/Player_enter_block.png', {
+this.load.spritesheet('player_enter_block', `${basePath}/sprites/Player_enter_block.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
 
-this.load.spritesheet('player_enter_block_low', 'sprites/Player_enter_block_low.png', {
+this.load.spritesheet('player_enter_block_low', `${basePath}/sprites/Player_enter_block_low.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
 
-this.load.spritesheet('oppo_enter_block', 'sprites/oppo_enter_block.png', {
+this.load.spritesheet('oppo_enter_block', `${basePath}/sprites/oppo_enter_block.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
 
-this.load.spritesheet('player_block', 'sprites/Player_block.png', {
+this.load.spritesheet('player_block', `${basePath}/sprites/Player_block.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
 
-this.load.spritesheet('player_block_low', 'sprites/Player_block_low.png', {
+this.load.spritesheet('player_block_low', `${basePath}/sprites/Player_block_low.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
 
-this.load.spritesheet('oppo_block', 'sprites/oppo_block.png', {
+this.load.spritesheet('oppo_block', `${basePath}/sprites/oppo_block.png`, {
     frameWidth: 640,  
     frameHeight: 360  
 });
 
-this.load.spritesheet('jab_anim', 'sprites/Player_jab.png', { 
+this.load.spritesheet('jab_anim', `${basePath}/sprites/Player_jab.png`, { 
     frameWidth: 640, 
     frameHeight: 360 
 });
 
-this.load.spritesheet('jab_body_anim', 'sprites/Player_jab_body.png', { 
+this.load.spritesheet('jab_body_anim', `${basePath}/sprites/Player_jab_body.png`, { 
     frameWidth: 640, 
     frameHeight: 360 
 });
 
-this.load.spritesheet('oppo_jab_anim', 'sprites/oppo_jab.png', { 
+this.load.spritesheet('oppo_jab_anim', `${basePath}/sprites/oppo_jab.png`, { 
     frameWidth: 640, 
     frameHeight: 360 
 });
 
-this.load.spritesheet('cross_anim', 'sprites/Player_cross.png', { 
+this.load.spritesheet('cross_anim', `${basePath}/sprites/Player_cross.png`, { 
     frameWidth: 640, 
     frameHeight: 360 
 });
 
-this.load.spritesheet('cross_body_anim', 'sprites/Player_cross_body.png', { 
+this.load.spritesheet('cross_body_anim', `${basePath}/sprites/Player_cross_body.png`, { 
     frameWidth: 640, 
     frameHeight: 360 
 });
 
-this.load.spritesheet('oppo_cross_anim', 'sprites/oppo_cross.png', { 
+this.load.spritesheet('oppo_cross_anim', `${basePath}/sprites/oppo_cross.png`, { 
     frameWidth: 640, 
     frameHeight: 360 
 });
 
 
-this.load.spritesheet('get_light_hit', 'sprites/get_light_hit.png', {
+this.load.spritesheet('get_light_hit', `${basePath}/sprites/get_light_hit.png`, {
     frameWidth: 640,
     frameHeight: 360
 });
 
 
-this.load.spritesheet('oppo_get_light_hit', 'sprites/oppo_get_light_hit.png', {
+this.load.spritesheet('oppo_get_light_hit', `${basePath}/sprites/oppo_get_light_hit.png`, {
     frameWidth: 640,
     frameHeight: 360
 });
 
-this.load.spritesheet('get_hit_body', 'sprites/get_hit_body.png', {
-    frameWidth: 640,
-    frameHeight: 360
-});
-
-
-this.load.spritesheet('oppo_get_hit_body', 'sprites/oppo_get_hit_body.png', {
-    frameWidth: 640,
-    frameHeight: 360
-});
-
-this.load.spritesheet('get_hard_hit', 'sprites/get_hard_hit.png', {
+this.load.spritesheet('get_hit_body', `${basePath}/sprites/get_hit_body.png`, {
     frameWidth: 640,
     frameHeight: 360
 });
 
 
-this.load.spritesheet('oppo_get_hard_hit', 'sprites/oppo_get_hard_hit.png', {
+this.load.spritesheet('oppo_get_hit_body', `${basePath}/sprites/oppo_get_hit_body.png`, {
     frameWidth: 640,
     frameHeight: 360
 });
 
-this.load.spritesheet('player_KO', 'sprites/player_KO.png', {
+this.load.spritesheet('get_hard_hit', `${basePath}/sprites/get_hard_hit.png`, {
     frameWidth: 640,
     frameHeight: 360
 });
 
-this.load.spritesheet('oppo_KO', 'sprites/oppo_KO.png', {
+
+this.load.spritesheet('oppo_get_hard_hit', `${basePath}/sprites/oppo_get_hard_hit.png`, {
+    frameWidth: 640,
+    frameHeight: 360
+});
+
+this.load.spritesheet('player_KO', `${basePath}/sprites/player_KO.png`, {
+    frameWidth: 640,
+    frameHeight: 360
+});
+
+this.load.spritesheet('oppo_KO', `${basePath}/sprites/oppo_KO.png`, {
     frameWidth: 640,
     frameHeight: 360
 });
