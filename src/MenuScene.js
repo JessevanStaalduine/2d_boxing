@@ -31,7 +31,27 @@ export class MenuScene extends Phaser.Scene {
         super({ key: 'MenuScene' });
     }
 
-    create() {
+
+            async create() {
+                // wacht tot het font geladen is
+                try {
+                await document.fonts.ready;
+                } catch (e) {
+                // fallback: als browsers iets raar doen, ga toch door
+                console.warn('Fonts.ready failed:', e);
+                }
+
+
+
+                const shareTech = new FontFaceObserver('Share Tech');
+                try {
+                await shareTech.load(null, 5000); // timeout 5 sec
+                // fonts loaded -> start MenuScene of teken tekst
+                } catch (e) {
+                console.warn('font load failed or timed out', e);
+                // fallback: start toch
+                }
+
 
             this.add.rectangle(400, 300, 800, 600, 0x020202).setDepth(DEPTH.BACKGROUND);
 
